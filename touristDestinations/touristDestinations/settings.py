@@ -86,8 +86,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'destinations',
         'USER': 'root',
-        'PASSWORD':'',
-        'HOST': 'LOCALHOST',
+        'PASSWORD': 'rootpassword',  # Must match MYSQL_ROOT_PASSWORD in docker-compose
+        'HOST': 'db',                # <--- This is the Critical Change!
         'PORT': '3306'
     }
 }
