@@ -31,7 +31,7 @@ DEBUG = True
 CSRF_COOKIE_SECURE =False  # Set to True if using HTTPS in production
 
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost', '0564-103-126-240-205.ngrok-free.app','https://0564-103-126-240-205.ngrok-free.app']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
