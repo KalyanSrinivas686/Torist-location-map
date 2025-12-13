@@ -23,3 +23,11 @@ COPY . /app/
 
 # We can keep the entrypoint if you want to run migrations automatically,
 # or simply use the command directly in docker-compose.
+# Copy the entrypoint script
+COPY entrypoint.sh /app/entrypoint.sh
+
+# Make it executable (Critical step!)
+RUN chmod +x /app/entrypoint.sh
+
+# Set it as the entrypoint
+ENTRYPOINT ["/app/entrypoint.sh"]
