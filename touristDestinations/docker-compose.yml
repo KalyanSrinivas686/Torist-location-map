@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      # This maps your current folder to /app inside the container.
+      # The db.sqlite3 file will be written to your local folder.
+      - .:/app
+    ports:
+      - "8000:8000"
+    # We removed the 'depends_on' and 'env_file' related to Postgres

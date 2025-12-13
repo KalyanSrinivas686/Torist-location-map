@@ -1,0 +1,18 @@
+# Dockerfile
+
+FROM python:3.11-slim
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+WORKDIR /app
+
+# Removed apt-get install libpq-dev since we don't need Postgres drivers
+
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . /app/
+
+# We can keep the entrypoint if you want to run migrations automatically,
+# or simply use the command directly in docker-compose.
